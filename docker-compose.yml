@@ -3,7 +3,7 @@ services:
   site:
     build:
       context: .
-      dockerfile: Dockerfile-apache
+      dockerfile: config/Dockerfile-apache
     ports:
       - "8080:80"
     env_file: .env
@@ -18,5 +18,4 @@ services:
     env_file: .env
     volumes:
      - /var/lib/mysql
-     - ./sql:/docker-entrypoint-initdb.d
     container_name: wordpress_mysql

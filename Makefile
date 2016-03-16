@@ -20,5 +20,5 @@ stop:
 rm:
 	@-docker-compose rm
 
-clean:
+clean: stop rm
 	@-./scripts/clean-wordpress.sh

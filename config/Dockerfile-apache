@@ -6,7 +6,7 @@ RUN apt-get update && apt-get upgrade -y \
 RUN a2enmod php5 rewrite
 
 #Configure vhost
-ADD ./apache-config.conf /etc/apache2/sites-available/000-wordpress.conf
+ADD ./config/apache-config.conf /etc/apache2/sites-available/000-wordpress.conf
 RUN ln -s /etc/apache2/sites-available/000-wordpress.conf /etc/apache2/sites-enabled/000-wordpress.conf
 
 EXPOSE 80
