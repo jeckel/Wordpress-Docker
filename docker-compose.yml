@@ -1,0 +1,22 @@
+version: '2'
+services:
+  site:
+    build:
+      context: .
+      dockerfile: Dockerfile-apache
+    ports:
+      - "8080:80"
+    env_file: .env
+    volumes:
+      - ./www:/var/www/site
+    container_name: wordpress_apache
+    dns_search: .
+  datastore:
+    image: mysql:5.6
+    ports:
+      - "3307:3306"
+    env_file: .env
+    volumes:
+     - /var/lib/mysql
+     - ./sql:/docker-entrypoint-initdb.d
+    container_name: wordpress_mysql
