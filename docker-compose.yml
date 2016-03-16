@@ -8,7 +8,7 @@ services:
       - "8080:80"
     env_file: .env
     volumes:
-      - ./www:/var/www/site
+      - ./wordpress:/var/www/site
     container_name: wordpress_apache
     dns_search: .
   datastore:
